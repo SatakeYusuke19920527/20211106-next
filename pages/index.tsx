@@ -30,11 +30,14 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1>LINE message送信</h1>
-        <h1>LINE message送信</h1>
-        <br />
-        <input type="text" onChange={(e) => setText(e.target.value)} />
-        <button onClick={sendLine}>送信</button>
+        <h1>What can you do?</h1>
+        <section className={styles.card}>
+          <h1>LINE</h1>
+          <input type="text" onChange={(e) => setText(e.target.value)} />
+          <button onClick={sendLine}>送信</button>
+        </section>
+        <section className={styles.card}></section>
+        <section className={styles.card}></section>
       </main>
     </div>
   );
