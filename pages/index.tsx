@@ -18,8 +18,8 @@ console.log(process.env.NEXT_PUBLIC_API_DEV_URL!);
 const Home: NextPage = () => {
   const [text, setText] = useState<string>('');
   const sendLine = async () => {
+    console.log(`${URL}${text}`);
     try {
-      console.log(`${URL}${text}`);
       const response = await fetch(`${URL}${text}`);
       const data = await response.json();
       console.log('🚀 ~ file: index.tsx ~ line 11 ~ sendLine ~ data', data);
