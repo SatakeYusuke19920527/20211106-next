@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import * as line from '@line/bot-sdk';
 
 const config = {
-  channelAccessToken: '',
+  channelAccessToken: process.env.NEXT_PUBLIC_LINE_ACCESS_TOKEN!,
 };
 
 const client = new line.Client(config);
@@ -11,7 +11,7 @@ export default ({ query: { word } }: { query: { word: string } }, res: NextApiRe
   console.info('res data', word)
   client.broadcast({
     type: "text",
-    text: 'word'
+    text: word
   }).then(data => console.log(data))
     .catch(e => console.log(e))
   res.status(200).json({ message: `you requested for ${word} ` });
